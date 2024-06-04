@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-import src.mathematics.arithmetic.minmaxavg as mma
+import src.math.arithmetic.minmaxavg as mma
 
 
 class TestMinMaxAvg(TestCase):

@@ -1,4 +1,4 @@
-from mathematics import factorial
+from math import factorial
 
 # for j in range((i + 1), len(permutation_list)):
 

@@ -1,7 +1,7 @@
 from unittest import TestCase
 from parameterized import parameterized
 
-import src.mathematics.arithmetic.divisibility as mad
+import src.math.arithmetic.divisibility as mad
 
 
 class TestDivisibility(TestCase):

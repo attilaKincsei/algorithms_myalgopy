@@ -1,4 +1,4 @@
-from mathematics import factorial
+from math import factorial
 
 
 def print_numbers_in_line(n):

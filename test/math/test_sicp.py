@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-import src.mathematics.sicp as sicp
+import src.math.sicp as sicp
 
 
 class TestSicp(TestCase):

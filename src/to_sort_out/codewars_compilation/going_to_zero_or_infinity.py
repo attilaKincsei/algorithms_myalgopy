@@ -1,4 +1,4 @@
-from mathematics import factorial
+from math import factorial
 from time import time
 
 

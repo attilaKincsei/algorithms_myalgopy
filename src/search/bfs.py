@@ -44,45 +44,36 @@ def create_graph(nums):
     return graph
 
 
-def test_fun(nums):
+def jump(nums: list[int]) -> int:
+    if len(nums) == 1:
+        return 0
     graph = create_graph(nums)
-    print(f"graph: {graph}")
     node_source = 0
     node_target = len(nums) - 1
-    visited = set()
-    to_visit = [node_source]
+    visited = {node_source}
+    path_idx = 0
     paths = [[node_source]]
-    while 0 < len(to_visit):
-        node_current = to_visit.pop(0)
+    while path_idx < len(paths):
+        path_current = paths[path_idx]
+        node_current = path_current[-1]
         nodes_child = graph.get(node_current)
-        if nodes_child is not None:
-            visited.add(node_current)
-            for item in nodes_child:
-                if item not in visited:
-                    to_visit.append(item)
-            paths_iter = paths[:]
-            for path in paths_iter:
-                if path[-1] == node_target:
-                    continue
-                if node_current == path[-1]:
-                    is_delete = False
-                    for node in nodes_child:
-                        if node not in path:
-                            is_delete = True
-                            paths.append(path + [node])
-                    if is_delete:
-                        paths.remove(path)
-    shortest_count = len(nums)
-    for idx, path in enumerate(paths):
-        if len(path) < shortest_count and path[-1] == node_target:
-            shortest_count = len(path) - 1
-    return paths
+        if node_target in nodes_child:
+            path_current.append(node_target)
+            return len(path_current) - 1
+        for node in nodes_child:
+            if node not in visited:
+                new_path = path_current[:]
+                new_path.append(node)
+                paths.append(new_path)
+                visited.add(node)
+        path_idx += 1
+    return None
 
 
 def main():
     test_input4 = [6, 2, 6, 1, 7, 9, 3, 5, 3, 7, 2, 8]
-    return create_graph(test_input4)
-    # return test_fun(test_input4)
+    # return create_graph(test_input4)
+    return jump(test_input4)
 
 
 if __name__ == '__main__':

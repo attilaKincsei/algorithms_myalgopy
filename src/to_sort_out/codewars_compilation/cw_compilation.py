@@ -130,7 +130,7 @@ def how_many_measurements(n):
 
 
 # best solution 1:
-from mathematics import ceil, log
+from math import ceil, log
 
 
 def how_many_measurements(n):

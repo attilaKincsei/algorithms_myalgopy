@@ -1,8 +1,10 @@
-# """
-# theory: https://www.redblobgames.com/pathfinding/a-star/introduction.html
-# algorithms can be foound here: https://rosettacode.org/wiki/A*_search_algorithm
-# """
-#
+"""
+A* search algorithm is an extension of Dijkstra's algorithm
+
+theory: https://www.redblobgames.com/pathfinding/a-star/introduction.html
+algorithms can be found here: https://rosettacode.org/wiki/A*_search_algorithm
+"""
+
 # from __future__ import print_function
 # import matplotlib.pyplot as plt
 #
